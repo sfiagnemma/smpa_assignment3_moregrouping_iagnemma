@@ -84,9 +84,11 @@ In other words, you want to end up with the calculated mean for what that percen
 
 ```{r}
 
-
-
-
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  summarize(mean_pct_bachelors = mean(pct_bachelors))
+  
+  
 
 ```
 
@@ -96,9 +98,9 @@ The relevant column for that is `trump_percent`.
 ```{r}
 
 
-
-
-
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  summarize(mean_trump_percent = mean(trump_percent))
 
 
 
