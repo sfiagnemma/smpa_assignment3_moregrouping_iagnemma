@@ -1,6 +1,6 @@
 ---
 title: "R Assignment #3"
-author: "Put Your Name Here"
+author: "Sara Iagnemma"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 format:
   html:
@@ -44,8 +44,8 @@ Write your code using grouping in the chunks below to help answer the following 
 
 ```{r}
 
-
-
+impeach %>% 
+  count(for_impeachment)
 
 
 
@@ -57,12 +57,8 @@ You'll want to ensure you do the grouping on both columns together, e.g. `group_
 
 ```{r}
 
-
-
-
-
-
-
+impeach %>% 
+  count(for_impeachment, median_income_compared_to_national)
 
 
 
@@ -73,11 +69,8 @@ You'll want to ensure you do the grouping on both columns together, e.g. `group_
 ```{r}
 
 
-
-
-
-
-
+impeach %>% 
+  count(for_impeachment, pct_bachelors_compared_to_national)
 
 
 
@@ -90,10 +83,6 @@ Instead of counting how many districts are above/below the national average, thi
 In other words, you want to end up with the calculated mean for what that percentage is for the Yes districts and the No districts.
 
 ```{r}
-
-
-
-
 
 
 
