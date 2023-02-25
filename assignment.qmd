@@ -112,11 +112,9 @@ impeach %>%
 
 ```{r}
 
-  
-
-
-
-
+impeach %>% 
+  filter(for_impeachment == "YES") %>% 
+  count(margin_flag_2018) 
 
 
 
@@ -126,13 +124,11 @@ impeach %>%
 
 ```{r}
 
-  
+# Summarize mean percentage of population that was non-white for districts with a representative that supported / opposed impeachment.
 
-
-
-
-
-
+impeach %>% 
+  group_by(for_impeachment) %>% 
+  summarize(mean_pct_nonwhite = mean(pct_nonwhite))
 
 ```
 
@@ -142,12 +138,9 @@ Use the mutate() function to create two new columns: one that extracts the year 
 
 ```{r}
 
-  
-
-
-
-
-
+impeach %>% 
+  mutate(year(date_announced)) %>% 
+  mutate(month(date_announced))
 
 
 ```
@@ -156,12 +149,8 @@ Use the mutate() function to create two new columns: one that extracts the year 
 
 ```{r}
 
-  
-
-
-
-
-
+impeach %>% 
+  count (month(date_announced))
 
 
 ```
